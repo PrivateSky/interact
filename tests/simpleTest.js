@@ -20,7 +20,7 @@ $$.swarm.describe("swarmTest", {
     }
 });
 
-is.startSwarm("swarmTest", "start", {foo:"foo", bar:"bar"}, 5).on({
+is.startSwarm("swarmTest", "start", {foo: "foo", bar: "bar"}, 5).on({
     step1:function(value, secondValue){
         console.log("Interaction step ", value);
         this.swarm("step2", value, secondValue);

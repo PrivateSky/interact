@@ -25,7 +25,7 @@ const exportBrowserInteract = {
 };
 
 
-if (typeof(navigator) !== "undefined") {
+if (typeof navigator !== "undefined") {
     module.exports = exportBrowserInteract;
 }
 else {
@@ -33,5 +33,5 @@ else {
         createNodeInteractionSpace: require("./lib/interactionSpaceImpl/folderMQBasedInteractionSpace").createInteractionSpace,
         createInteractionSpace: require("./lib/interactionSpaceImpl/SoundPubSubMQBasedInteractionSpace").createInteractionSpace,
         createRemoteInteractionSpace: require('./lib/interactionSpaceImpl/httpInteractionSpace').createInteractionSpace
-    }
+    };
 }
