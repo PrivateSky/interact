@@ -16,9 +16,6 @@ module.exports = {
                 const regexString = `(${swarmId}|\\*)\\/(${swarmTypeName}|\\*)\\/(${phaseName}|\\*)`;
                 const reg = new RegExp(regexString);
 
-                console.log('USING REGEX', regexString);
-                console.log(reg);
-
                 const keys = Object.keys(storage);
                 keys.forEach(key => {
                     if (key.match(reg)) {
@@ -135,7 +132,6 @@ module.exports = {
                         this.on('__return__', callback);
                     },
                     off: function (phaseName, callback) {
-                        console.log('going offf')
                         cordRelay.off(swarmId, swarmName, phaseName, callback);
                     }
                 }
