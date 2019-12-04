@@ -59,5 +59,5 @@ assert.callback('firstPowerCordTest', (callback) => {
         callback();
 
     }, 1000);
-});
+}, 2000);
 
