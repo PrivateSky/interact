@@ -2,7 +2,7 @@ require("../../../builds/devel/pskruntime");
 require("../../../builds/devel/consoleTools");
 require("callflow");
 
-var is = require("../index").createInteractionSpace();
+var is = require("../../index").createInteractionSpace();
 
 $$.swarm.describe("swarmTest", {
     start:function(value, secondValue){

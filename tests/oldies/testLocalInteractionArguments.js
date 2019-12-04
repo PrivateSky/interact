@@ -2,10 +2,10 @@
 // Tests if the arguments passed through the interact module
 // to the target swarm are received as expected
 /////////////////////////////////////////////////////////////
-require('../../../psknode/bundles/pskruntime');
-require('../../../psknode/bundles/psknode');
+require('../../../../psknode/bundles/pskruntime');
+require('../../../../psknode/bundles/psknode');
 const assert = require('double-check').assert;
-const interact = require('../../../modules/interact');
+const interact = require('../../index');
 const arg1 = { a: 'asd', b: 'eqd' };
 const arg2 = 2;
 

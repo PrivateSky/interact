@@ -124,15 +124,30 @@ module.exports = {
 
                 powerCord.startSwarm(swarmSerialization);
 
+                function listening(method, phaseName, callback){
+                    if(typeof phaseName === "string"){
+                        cordRelay[method](swarmId, swarmName, phaseName, callback);
+                    }
+
+                    if(typeof phaseName === "object"){
+                        if(typeof callback !== "undefined"){
+                            console.log("Callback argument is ignored");
+                        }
+                        Object.keys(phaseName).forEach(phase => {
+                            cordRelay[method](swarmId, swarmName, phase, phaseName[phase]);
+                        });
+                    }
+                }
+
                 return {
                     on: function (phaseName, callback) {
-                        cordRelay.on(swarmId, swarmName, phaseName, callback)
+                        listening("on", phaseName, callback);
                     },
                     onReturn: function (callback) {
                         this.on('__return__', callback);
                     },
                     off: function (phaseName, callback) {
-                        cordRelay.off(swarmId, swarmName, phaseName, callback);
+                        listening("off", phaseName, callback)
                     }
                 }
             }

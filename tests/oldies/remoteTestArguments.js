@@ -2,12 +2,12 @@
 // Tests if the arguments passed through the interact module
 // to the target swarm are received as expected
 /////////////////////////////////////////////////////////////
-require('../../../psknode/bundles/pskruntime');
-require("../../../psknode/bundles/psknode");
-require("../../../psknode/bundles/httpinteract");
+require('../../../../psknode/bundles/pskruntime');
+require("../../../../psknode/bundles/psknode");
+require("../../../../psknode/bundles/httpinteract");
 const assert = require('double-check').assert;
 const interact = require('interact');
-const VirtualMQ = require('../../../modules/virtualmq');
+const VirtualMQ = require('../../../virtualmq');
 const removeDir = require('../Utils/virtualMQUtils').deleteFolder;
 const channel = 'local/agent/test';
 var endpoint = '';
